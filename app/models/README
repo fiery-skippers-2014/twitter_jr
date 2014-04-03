@@ -1,5 +1,15 @@
-Add your ActiveRecord models here.
+Team Twitter Jr.
 
-You can create them by being in the application root directory and running, e.g.,
+Team memebers:
 
-rake generate:model NAME=User
+Namrata
+Nina
+Bo
+Hem
+
+who does what?
+
+Nina and Bo - created user models, migrations
+
+Hem, Namrata - worked on controllers and views
+
