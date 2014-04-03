@@ -1,6 +1,6 @@
 class CreateFollowers < ActiveRecord::Migration
   def change
-    create_table :follwers do |t|
+    create_table :followers do |t|
       t.integer :follower_id
       t.belongs_to :users
       t.timestamps
