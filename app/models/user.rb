@@ -1,5 +1,4 @@
 require 'bcrypt'
-
 class User < ActiveRecord::Base
   include BCrypt
   validates_uniqueness_of :email
@@ -8,32 +7,18 @@ class User < ActiveRecord::Base
   has_many :tweets
   has_many :followers
 
-  def password
-    @password ||= Password.create(password_hash)
-  end
+def self.create(params)
+    @user = self.new(params)
+    @user.password = params[:password_hash]
+    @user.save!
+end
 
-  def password=(new_password)
+def password
+    @password ||= Password.new(password_hash)
+end
+
+def password=(new_password) #encrypts the new password
     @password = Password.create(new_password)
     self.password_hash = @password
-    p @password
   end
-
-  def create
-    @user = User.new(params[:name])
-    @user.password = params[:password]
-    @user.save!
-  end
-
-  def login
-    @user = User.find_by_email(params[:email])
-    if @user.password == params[:password]
-      redirect '/'
-    else
-      redirect '/'
-    end
-  end
-
-
-
-
 end

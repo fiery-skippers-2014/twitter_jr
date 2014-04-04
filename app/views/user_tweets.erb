@@ -1,0 +1,15 @@
+<div class="container">
+<ul>
+	<% @user.tweets.each do |tweet| %>
+	 <li><h4>Tweets:</h4><%= tweet.tweet %> </li>
+	 <%end%>
+</ul><br><br>
+
+<form method="POST" action="/users/<%= @user.id%>/tweets">
+  	Wanna tweet more? : <input type="text" name="tweet" placeholder="your tweets">
+  	<input type="submit" value="Tweet">
+
+  </form><br><br>
+
+<a href="/logout">Log Out</a>
+</div>
