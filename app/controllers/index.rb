@@ -22,29 +22,6 @@ get '/welcome_new_user' do
 end
 
 
-
-
-
-
-
-
-# enable :sessions
-
-# before do
-# @user = User.find(params[:id])
-# session[:id] = @user.id
-# end
-
-# get '/' do
-#   # Look in app/views/index.erb
-#   erb :index
-# end
-
-# post '/users/create_user' do
-# @user=User.create(name: params[:name], password: params[:password], email: params[:email])
-# redirect '/users/'
-# end
-
 get '/users/:id' do
   erb :user_profile
 end
