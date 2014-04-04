@@ -20,8 +20,5 @@ end
 def password=(new_password) #encrypts the new password
     @password = Password.create(new_password)
     self.password_hash = @password
-end
-
-
-
+  end
 end
