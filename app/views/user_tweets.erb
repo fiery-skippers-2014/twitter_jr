@@ -6,10 +6,19 @@
 </ul><br><br>
 
 <form method="POST" action="/users/<%= @user.id%>/tweets">
-  	Wanna tweet more? : <input type="text" name="tweet" placeholder="your tweets">
+  	Tweet : <input type="text" name="tweet" placeholder="your tweets">
   	<input type="submit" value="Tweet">
 
   </form><br><br>
 
 <a href="/logout">Log Out</a>
+</div>
+
+<div class="container">
+  <ul>
+    <%@user_all.each do |user| %>
+    <li><%= user.name%> | <a href="/follow">Follow</a></li>
+
+    <%end %>
+  </ul>
 </div>

@@ -4,9 +4,6 @@
 <% if @current_user %>
   <h1> Welcome <%= "#{@current_user.email}" %> </h1>
    <br><br>
-
-
-
   <form method="POST" action="/users/<%= @user%>/tweets">
   	Tweet Now: <input type="text" name="tweet" placeholder="your tweets">
   	<input type="submit" value="Tweet">
@@ -33,3 +30,4 @@ or
 <center>
 <img src="http://thebootcamp.co.uk/wp-content/uploads/2013/03/as-featured-for-Home-Page-full-horizontal-version-1024x371.png" width="700", height="200">
 </center>
+

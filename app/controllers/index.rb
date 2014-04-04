@@ -43,6 +43,11 @@ post '/users/:id/tweets' do
 end
 
 get '/users/:id/tweets' do
+  @user_all = User.all
   @user= User.find(params[:id])
   erb :user_tweets
+end
+
+get '/follow' do
+
 end
