@@ -1,4 +1,6 @@
 <div class="container">
+    <img src="<%= User.fetch_gravatar(session[:user_id])%>">
+
 <ul>
 	<% @user.tweets.each do |tweet| %>
 	 <li><h4>Tweets:</h4><%= tweet.tweet %> </li>

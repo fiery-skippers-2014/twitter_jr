@@ -19,6 +19,7 @@ gem 'rspec'
 gem 'shotgun'
 
 gem 'bcrypt'
+gem 'gravtastic'
 
 group :test do
 
