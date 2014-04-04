@@ -6,7 +6,6 @@ class User < ActiveRecord::Base
 
   has_many :tweets
   has_many :followers
-<<<<<<< HEAD
 
   def password
     @password ||= Password.create(password_hash)
@@ -18,24 +17,21 @@ class User < ActiveRecord::Base
     p @password
   end
 
-  # def create
-  #   @user = User.new(params[:user])
-  #   @user.password = params[:password]
-  #   @user.save!
-  # end
+  def create
+    @user = User.new(params[:user])
+    @user.password = params[:password]
+    @user.save!
+  end
 
-  # def login
-  #   @user = User.find_by_email(params[:email])
-  #   if @user.password == params[:password]
-  #     redirect '/'
-  #   else
-  #     redirect '/'
-  #   end
-  # end
+  def login
+    @user = User.find_by_email(params[:email])
+    if @user.password == params[:password]
+      redirect '/'
+    else
+      redirect '/'
+    end
+  end
 
-=======
-  # Remember to create a migration!
->>>>>>> 943a96abc4bcfb5f872a1b3a5fb9c81b020a97b7
 
 
 end
