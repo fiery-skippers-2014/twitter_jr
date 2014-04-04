@@ -1,4 +1,5 @@
 get '/' do
+  User.fetch_gravatar
   @current_user=User.find(session[:user_id])  if session[:user_id]
   @user=User.first.id
   erb :index
