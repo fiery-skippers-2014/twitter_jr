@@ -1,4 +1,5 @@
 require 'bcrypt'
+
 class User < ActiveRecord::Base
   include BCrypt
   validates_uniqueness_of :email
@@ -17,20 +18,21 @@ class User < ActiveRecord::Base
     p @password
   end
 
-  # def create
-  #   @user = User.new(params[:user])
-  #   @user.password = params[:password]
-  #   @user.save!
-  # end
+  def create
+    @user = User.new(params[:name])
+    @user.password = params[:password]
+    @user.save!
+  end
 
-  # def login
-  #   @user = User.find_by_email(params[:email])
-  #   if @user.password == params[:password]
-  #     redirect '/'
-  #   else
-  #     redirect '/'
-  #   end
-  # end
+  def login
+    @user = User.find_by_email(params[:email])
+    if @user.password == params[:password]
+      redirect '/'
+    else
+      redirect '/'
+    end
+  end
+
 
 
 
