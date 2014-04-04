@@ -15,6 +15,9 @@ end
 
 post '/signup' do
   @user_input = User.create(params)
+  p "$$$$$$$$$$$$$$$$$$$$$$"
+  p params
+  p "%%%%%%%%%%%%%%%%%%%%%%%%"
   @user = User.find_by_email(params[:email])
   session[:user_id] = @user.id
   redirect '/'
@@ -48,6 +51,7 @@ get '/users/:id/tweets' do
   erb :user_tweets
 end
 
-get '/follow' do
-
+get '/:id/follow' do
+  @user=User.find(params[:id])
+  erb :follow
 end

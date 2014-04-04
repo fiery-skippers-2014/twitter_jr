@@ -19,8 +19,7 @@
 <div class="container">
   <ul>
     <%@user_all.each do |user| %>
-    <li><%= user.name%> | <a href="/follow">Follow</a></li>
-
+    <li><%= user.name%> | <a href="/<%= user.id %>/follow">Follow</a></li>
     <%end %>
   </ul>
 </div>
