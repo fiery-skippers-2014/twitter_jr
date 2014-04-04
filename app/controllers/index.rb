@@ -26,6 +26,7 @@ post '/login' do
     session[:user_id] = @user.id
     redirect '/users/tweets'
   else
+    @error = "Wrong Password!"
     redirect '/'
   end
 end
