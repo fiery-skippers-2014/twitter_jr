@@ -15,7 +15,6 @@ gem 'activesupport'
 gem 'activerecord'
 
 gem 'rake'
-gem 'rspec'
 gem 'shotgun'
 
 gem 'bcrypt'
