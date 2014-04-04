@@ -15,12 +15,13 @@ gem 'activesupport'
 gem 'activerecord'
 
 gem 'rake'
+gem 'rspec'
 gem 'shotgun'
 
 gem 'bcrypt'
 
 group :test do
-  gem 'rspec'
+  
   gem 'rack-test'
   gem 'capybara'
   gem 'shoulda-matchers'
