@@ -22,9 +22,9 @@ end
 
 post '/login' do
   @user = User.find_by_email(params[:email])
-  if @user.password == params[:password]
+  if @user.password == params[:password_hash]
     session[:user_id] = @user.id
-    redirect '/users/tweets'
+    redirect "/users/#{@user.id}/tweets"
   else
     @error = "Wrong Password!"
     redirect '/'
