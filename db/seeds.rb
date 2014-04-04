@@ -2,7 +2,7 @@
 1.times do
   User.create(
     name: "Bob",
-    email: "abc@abc.com",
+    email: "bcd@abc.com",
     password_hash: "123456"
     )
 end
