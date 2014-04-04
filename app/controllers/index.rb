@@ -1,6 +1,5 @@
 get '/' do
   @current_user=User.find(session[:user_id])  if session[:user_id]
-  
   @user=User.first.id
   erb :index
 end
@@ -9,7 +8,7 @@ get '/login' do
   erb :login
 end
 
-get '/signup' do 
+get '/signup' do
   erb :signup
 end
 
