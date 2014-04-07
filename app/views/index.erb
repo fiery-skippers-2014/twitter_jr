@@ -2,6 +2,7 @@
  <body background="http://us.cdn2.123rf.com/168nwm/hospitalera/hospitalera0811/hospitalera081100200/3808052-green-background-compiled-by-a-multitude-of-tiny-cubes-tiles-seamlessly-as-a-pattern.jpg">
 
 <% if @current_user %>
+  <!-- no reason to interpolate these values the erb tag will return a string. -->
   <h1> Welcome <%= "#{@current_user.email}" %> </h1>
    <br><br>
   <form method="POST" action="/users/<%= @user%>/tweets">

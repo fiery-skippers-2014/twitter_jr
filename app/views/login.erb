@@ -26,6 +26,9 @@
       <fieldset>
 
         <p><label for="email">E-mail address</label></p>
+        <!-- interesting use of onFocus. this would be better handled in the CSS, with the focus psuedo selector -->
+        <!-- what you've done instead is write some JavaScript in your HTML, which I wouldn't recommend -->
+        <!-- keep your languages as separate as possible! -->
         <p><input type="email" name= "email" id="email" value="mail@address.com" onBlur="if(this.value=='')this.value='mail@address.com'" onFocus="if(this.value=='mail@address.com')this.value=''"></p> <!-- JS because of IE support; better: placeholder="mail@address.com" -->
 
         <p><label for="password">Password</label></p>
