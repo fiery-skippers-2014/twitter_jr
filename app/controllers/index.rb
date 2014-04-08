@@ -1,5 +1,6 @@
 get '/' do
   @current_user=User.find(session[:user_id])  if session[:user_id]
+  # confused as to what this doing here.
   @user=User.first.id
   erb :index
 end
@@ -15,6 +16,7 @@ end
 
 post '/signup' do
   @user_input = User.create(params)
+  # no p's in production! this is a hanging offense at a lot of companies.
   p "$$$$$$$$$$$$$$$$$$$$$$"
   p params
   p "%%%%%%%%%%%%%%%%%%%%%%%%"
@@ -40,7 +42,9 @@ get '/logout' do
 end
 
 post '/users/:id/tweets' do
+  # .find automatically defaults to find_by_id.
   user = User.find_by_id(params[:id])
+  # nice use of creation off a collection, very clean.
   user.tweets.create(tweet: params[:tweet])
  redirect "/users/#{params[:id]}/tweets"
 end
